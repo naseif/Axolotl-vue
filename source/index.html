@@ -1,22 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Axolotl</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <title>Axolotl</title>
 </head>
+
 <body>
-    <div id="app">
-        <ul id="databaseJson">
-            <li v-for="item in boards" :key="item.ID">
-              {{ item.NAME }}
-            </li>
-          </ul>
+
+  <div id="app">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="#">Axolotl</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Boards
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a v-for="item in boards" :key="item.ID" class="dropdown-item" href="#">{{ item.NAME }}</a>
+            </div>
+          </li>
+        </ul>
       </div>
-<script src="./js/vue.min.js"></script>
-<script src="./js/axios.min.js"></script>
-<script src="./js/index.js"></script>
+    </nav>
+  </div>
+  <table class="kanban-board">
+    <thead>
+      <tr>
+        <th class="kanban-board-header" scope="col">Personal</th>
+        <th class="kanban-board-header" scope="col">Questions</th>
+        <th class="kanban-board-header" scope="col">Notes</th>
+        <th class="kanban-board-header" scope="col">Backlog</th>
+        <th class="kanban-board-header" scope="col">To-do</th>
+        <th class="kanban-board-header" scope="col">In progress</th>
+        <th class="kanban-board-header" scope="col">Done</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="kanban-board-column">How to async fucntion</td>
+        <td class="kanban-board-column"></td>
+        <td class="kanban-board-column">LEARN HTML<br>
+          LEARN HTML<br>
+          LEARN HTML<br>
+          LEARN HTML<br></td>
+        <td class="kanban-board-column">LEARN CSS</td>
+        <td class="kanban-board-column">NOTHING BUT TO LEARN</td>
+        <td class="kanban-board-column">NOTHING</td>
+        <td class="kanban-board-column">WITH NOTHING</td>
+
+
+
+      </tr>
+    </tbody>
+  </table>
+
+
+  <script src="./js/vue.min.js"></script>
+  <script src="./js/axios.min.js"></script>
+  <script src="js/jquery-3.5.1.slim.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="./js/index.js"></script>
 </body>
+
 </html>
